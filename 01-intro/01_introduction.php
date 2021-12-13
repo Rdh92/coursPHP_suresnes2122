@@ -65,10 +65,56 @@
           <!-- fin col  -->
 
           <div class="col-md-4 p-1 border border-danger">
-            <?php echo "date(D/M/Y - H:m:s"); ?>
+            <?php //echo "date(D/M/Y - H:m:s"); ?>
+            <?php
+              echo "<h5> Date du jour : ". date('d/m/Y') . "</h5>";
+              echo "<p>Bienvenue sur le cours PHP</p>";
+            ?>;
           </div>
+          <!-- fin col  -->
           <div class="col-md-4 p-1 border border-danger">
+            <h4>Le cycle de vie d'une page PHP</h4>
+            <ol>
+              <li>Envoie d'une requête HTTP (Hyper Text Transfer Protocol) par le navigateur client vers le serveur du type http://www/monsite.fr/infos.php</li>
+              <li>Interprétation par le serveur du code PHP contenu dans la page appelée</li>
+              <li>Envoi par le serveur d'un fichier dont le contenu est purement HTML</li>
 
+              <p><a href="../00-pages/01_page.php">Ici un autre lien vers uen autre page PHP</a></p>
+            </ol>
+
+          </div>
+        </section>
+        <!-- fin row  -->
+
+        <section class="row p-2">
+          <div class="col-md-10">
+            <h3>Inclure des fichiers externes en PHP</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Fonction</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><code>include("mon_fichier.php")</code></td>
+                  <td>Lors de son interprétation par le serveur, cette ligne est remplacée par tout le contenu du fichier précisé en paramètre, il faut fournir le nom et l'adresse complète ; en cas d'erreur, par ex. si le fichier n'est pas trouvé, include() ne génère qu'une alerte (un warning) et le script continue</td>
+                </tr>
+                <tr>
+                  <td><code>require("mon_fichier.php")</code></td>
+                  <td>Require() a désormais un comportement identique à include(), à la différence près qu'en cas d'erreur, require() provoque une erreur "fatale" (fatal error) et met fin au script</td>
+                </tr>
+                <tr>
+                  <td><code>include_once("mon_fichier.php)
+                  <br>
+                  require_once("../inc/body.inc.php")</code></td>
+                  <td>Ces fonctions ne sont pas exécutées plusieurs fois, même si on les trouve dans une boucle ou si elles ont été exécutées une fois dans le code qui précède</td>
+                </tr>
+              </tbody>
+              
+            </table>
           </div>
         </section>
     </div>
